@@ -1,6 +1,9 @@
 h1{
     text-align:center;
+    background-color:#67AFCB;
+    color: #092834;
 }
-html{
-    background-color: teal;
+body{
+    background-color: #E4F1F6;
+    color:#092834;
 }

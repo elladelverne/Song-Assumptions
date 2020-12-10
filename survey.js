@@ -1,18 +1,31 @@
-
-$("#submit").click(function() {
-  var q1user = $("select[name='genreChoices']").val();
-    console.log(q1user)
-    
-   
-    const rapData = loadRap()
     const altRockData = loadAltRock()
     const countryData = loadCountry()
     const christianData = loadChristian()
     const popData = loadPop()
-    
+
+
+function renderRapMusic(){
+    const rapData = loadRap()
+    const $musicList = document.getElementById("musicList")
+    rapData.rapMusics.forEach(rapMusic => {
+         const $rapMusic = document.createElement("div")
+         $rapMusic.innerHTML = `<h1>${rapMusic.name}</h1>`
+         $rapMusic.innerHTML = `<h3>${rapMusic.artist}</h3>`
+         $rapMusic.innerHTML = `<h3>${rapMusic.album}</h3>`
+         $musicList.append($rapMusic)
+    })
+}
+
+
+$("#submit").click(function() {
+  var q1user = $("select[name='genreChoices']").val();
+    console.log(q1user)
+ 
+    $("#buttonGenre").remove();
+   
     
     if(q1user == "rap"){
-       console.log(rapData)
+        renderRapMusic()
     }
     else if(q1user == "altRock"){
        console.log(altRockData)
@@ -27,9 +40,9 @@ $("#submit").click(function() {
        console.log(popData)
     }
     
+   
+    
 })
-
-
 
         function loadRap() {
     //JSON - JavaScript Object Notation
@@ -87,7 +100,7 @@ $("#submit").click(function() {
     }
   ]
     return{
-        "music" : rapMusics
+        "rapMusic" : rapMusics
     } 
 }
               
@@ -147,7 +160,7 @@ $("#submit").click(function() {
     }
   ]
     return{
-        "music" : altRockMusics
+        "altRockMusic" : altRockMusics
     } 
 }        
 
@@ -207,7 +220,7 @@ function loadCountry() {
     }
   ]
     return{
-        "music" : countryMusics
+        "countryMusic" : countryMusics
     } 
 }                  
 
@@ -267,7 +280,7 @@ function loadChristian() {
     }
   ]
     return{
-        "music" : christianMusics
+        "christianMusic" : christianMusics
     } 
 }                
 
@@ -328,7 +341,7 @@ function loadPop() {
     }
   ]
     return{
-        "music" : popMusics
+        "popMusic" : popMusics
     } 
 }   
 
