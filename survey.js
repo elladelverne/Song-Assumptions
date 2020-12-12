@@ -4,6 +4,7 @@
     const popData = loadPop()
     const rapData = loadRap()
     const $musicList = document.getElementById("musicList")
+    
 
 function renderRapMusic(){
     
