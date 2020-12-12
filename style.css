@@ -1,6 +1,17 @@
 h1{
     text-align:center;
+    background-color:#67AFCB;
+    color: #092834;
 }
-html{
-    background-color: teal;
+h2{
+    background-color:#1A3E4C;
+    color: #E4F1F6;
+    text-align:center;
+    margin-right:200px;
+    margin-left:200px;
+}
+body{
+    background-color: #E4F1F6;
+    color:#092834;
+    text-align: center;
 }
